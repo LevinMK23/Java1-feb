@@ -4,4 +4,8 @@ public class HomeWork {
         System.out.println("Hello");
     }
 
+
+    void foo1() {
+        System.out.println("OK");
+    }
 }
