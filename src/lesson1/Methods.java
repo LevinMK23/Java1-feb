@@ -1,11 +1,14 @@
+package lesson1;
+
 import java.util.Scanner;
 
-public class SqrtEquation {
+public class Methods {
 
-    public static void main(String[] args) {
-        System.out.println("Введите коэффициенты a, b, c");
-        Scanner in = new Scanner(System.in);
-        double a = in.nextInt(), b = in.nextInt(), c = in.nextInt();
+    static void helloWorldPrinter() {
+        System.out.println("Hello world");
+    }
+
+    static void sqrtEquation(double a, double b, double c) {
         double discriminant = b * b - 4 * a * c;
         if (discriminant < 0) {
             System.out.println("Корней нет");
@@ -19,4 +22,17 @@ public class SqrtEquation {
             System.out.println("x2 = " + x2);
         }
     }
+
+    static int sum(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        helloWorldPrinter();
+        Scanner in = new Scanner(System.in);
+        sqrtEquation(in.nextInt(), in.nextInt(), in.nextInt());
+        sqrtEquation(1, 2, 1);
+        System.out.println(sum(1, 2));
+    }
+
 }
