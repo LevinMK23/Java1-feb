@@ -79,11 +79,19 @@ public class GameXO {
     }
 
     private static boolean isWin(char x) {
-        // TODO: 18.02.2021 Сделать эффективную проверку на победу
-        if (MAP[0][0] == MAP[1][1]
-                && MAP[1][1] == MAP[2][2]
-                && MAP[2][2] == x) {
-            return true;
+        for (int i = 0; i < MAP.length; i++) {
+            // accumulate
+            boolean h = true, v = true, d1 = true, d2 = true;
+            int ch = 0, cv = 0, cd1 = 0, cd2 = 0;
+            for (int j = 0; j < MAP.length; j++) {
+                h &= MAP[i][j] == x;
+                v &= MAP[j][i] == x;
+                d1 &= MAP[j][j] == x;
+                d2 &= MAP[j][MAP.length-j-1] == x;
+            }
+            if (h || v || d1 || d2) {
+                return true;
+            }
         }
         return false;
     }
@@ -93,6 +101,7 @@ public class GameXO {
         return inMap && MAP[x][y] == DEFAULT;
     }
 
+    // end point
     public static void main(String[] args) {
         System.out.println("Вы в игре 'Крестики Нолики'");
         System.out.println("На каждом ходу вы вводите два числа: номер строки и номер столбца");
