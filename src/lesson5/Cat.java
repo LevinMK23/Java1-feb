@@ -9,11 +9,14 @@ public class Cat {
 
     public Cat() {}
 
+    // cmd + n
+    // alt + insert
+
     public Cat(String name, int age) {
         this.name = name;
         this.age = age;
         this.hp = 100;
-        this.strange = 5 + (int) (Math.random() * 30);
+        this.strange = (int) (5 + (Math.random() * 30));
     }
 
     public int getHp() {
