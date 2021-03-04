@@ -1,12 +1,13 @@
 package lesson7.hospital;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Therapist extends Doctor {
 
     @Override
     public List<String> specialisation() {
-        return List.of(
+        return Arrays.asList(
                 "боль в горле",
                 "кашель",
                 "температура",
